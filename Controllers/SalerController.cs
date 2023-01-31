@@ -8,6 +8,8 @@ using trilha_tech_test_api_tech.Models;
 
 namespace trilha_tech_test_api_tech.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class SalerController: ControllerBase
     {
         private readonly SalerContext Context;
@@ -16,14 +18,21 @@ namespace trilha_tech_test_api_tech.Controllers
         {
             Context = context;
         }
-        [HttpPost("CreateContact")]
+        [HttpPost("CreateSale")]
         public IActionResult Create(Saler saler)
         {
 
-            Context.Add(saler);
-            Context.SaveChanges();
-            return CreatedAtAction(nameof(GetById), new {id = saler.Id}, saler);
+            if (ModelState.IsValid) {
 
+                if (saler.Status.Equals("Aguardando pagamento...") && saler.IfAny()) {
+                
+                    Context.Add(saler);
+                    Context.SaveChanges();
+            
+                    return CreatedAtAction(nameof(GetById), new {id = saler.Id}, saler);
+                
+                } else return NotFound(saler);            
+            } else return NotFound(saler);
         }
         [HttpGet("GetById/{id}")]
         public IActionResult GetById(int id)

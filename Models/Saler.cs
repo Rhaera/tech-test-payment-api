@@ -14,5 +14,13 @@ namespace trilha_tech_test_api_tech.Models
         public string Telefone {get; set;}
         public string Status {get; set;}
         public string Itens {get; set;}
+        public bool IfAny()
+        {
+            if (CPF == null ||
+            Nome == null ||
+            Email == null ||
+            Telefone == null ||
+            Itens == null) return false; else return true;
+        }
     }
 }
