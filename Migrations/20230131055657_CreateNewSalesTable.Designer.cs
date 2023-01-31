@@ -11,8 +11,8 @@ using trilha_tech_test_api_tech.Context;
 namespace trilhatechtestapitech.Migrations
 {
     [DbContext(typeof(SalerContext))]
-    [Migration("20230131051042_CreateSalesTable")]
-    partial class CreateSalesTable
+    [Migration("20230131055657_CreateNewSalesTable")]
+    partial class CreateNewSalesTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,7 +38,13 @@ namespace trilhatechtestapitech.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Itens")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefone")

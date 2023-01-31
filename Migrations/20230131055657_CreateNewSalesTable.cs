@@ -5,7 +5,7 @@
 namespace trilhatechtestapitech.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateSalesTable : Migration
+    public partial class CreateNewSalesTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +19,9 @@ namespace trilhatechtestapitech.Migrations
                     CPF = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Itens = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
