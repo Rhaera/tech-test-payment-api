@@ -12,5 +12,7 @@ namespace trilha_tech_test_api_tech.Models
         public string Nome {get; set;}
         public string Email {get; set;}
         public string Telefone {get; set;}
+        public string Status {get; set;}
+        public string Itens {get; set;}
     }
 }
