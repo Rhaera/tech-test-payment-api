@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\trilha-tech-test-api-tech.props" />
+</Project>
